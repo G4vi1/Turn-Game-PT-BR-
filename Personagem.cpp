@@ -82,3 +82,27 @@ void Personagem::resetarDefesa(){
 void Personagem::adicionarHabilidade(const Habilidade& habilidade){
     habilidades.push_back(habilidade);
 }
+
+void Personagem::atacar(Personagem& alvo, const Habilidade& habilidade){
+
+    int custo = habilidade.getCustoMana();
+    if(!usoMana(custo)){
+        return;
+    }
+
+    double valorAtaque = habilidade.getValorAtaque();
+
+    double resistencia = alvo.getDefesa() * alvo.getEsquiva();
+
+    if (alvo.consultarDefesa()){
+        resistencia = resistencia * 1.3;
+    }
+
+    double dano = valorAtaque - resistencia;
+    if(dano < 0){
+        dano = 0;
+    }
+
+    alvo.receberDano(dano);
+}
+

@@ -1,7 +1,6 @@
 #ifndef Batalha_HPP
 #define Batalha_HPP
 #include "Personagem.hpp"
-#include <string>
 
 using namespace std;
 
@@ -11,11 +10,11 @@ class Batalha {
 
         Batalha(Personagem& personagemHeroi, Personagem& personagemVilao);
         void iniciar();
-        bool terminou() const;
 
     private: 
         Personagem& personagemHeroi;
         Personagem& personagemVilao;
+        bool turno(Personagem& atacante, Personagem& defensor);
         int menu();
         
 
