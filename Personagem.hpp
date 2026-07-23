@@ -12,8 +12,8 @@ class Personagem {
 
     private:
         string nome;
-        double vida, esquiva, defesa;
-        int mana;
+        double vida, vidaMax, esquiva, defesa;
+        int mana, manaMax;
         bool estaDefendendo; //Teste lógico para saber se ele está defendendo no turno
         vector<Habilidade> habilidades; //Opções de move
 
@@ -31,8 +31,14 @@ class Personagem {
 
         //Getters
 
+        string getNome() const;
+        double getVida() const;
+        double getVidaMax() const;
         double getDefesa() const;
         double getEsquiva() const;
+        double getMana() const;
+        double getManaMax() const;
+        
         const vector<Habilidade>& getHabilidades() const;
 
     //Mutators

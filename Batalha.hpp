@@ -14,8 +14,11 @@ class Batalha {
     private: 
         Personagem& personagemHeroi;
         Personagem& personagemVilao;
+        string desenharBarra(double atual, double maximo, char simbolo);
+        void mostrarStatus();
         bool turno(Personagem& atacante, Personagem& defensor);
         int menu();
+        
         
 
 };

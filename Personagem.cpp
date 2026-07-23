@@ -6,7 +6,7 @@ using namespace std;
 //Construtor
 
 Personagem::Personagem(const string& nome, double vida, double esquiva, double defesa, int mana)
-    : nome(nome), vida(vida), esquiva(esquiva), defesa(defesa), mana(mana), estaDefendendo(false) {
+    : nome(nome), vida(vida), vidaMax(vida), esquiva(esquiva), defesa(defesa), mana(mana), manaMax(mana), estaDefendendo(false) {
 }
 
 //Métodos de Consulta
@@ -32,8 +32,28 @@ bool Personagem::consultarDefesa() const {
 
     //Getters
 
+string Personagem::getNome() const {
+    return nome;
+}
+
+double Personagem::getVida() const {
+    return vida;
+}
+
+double Personagem::getVidaMax() const {
+    return vidaMax;
+}
+
 double Personagem::getDefesa() const {
     return defesa;
+}
+
+double Personagem::getMana() const {
+    return mana;
+}
+
+double Personagem::getManaMax() const {
+    return manaMax;
 }
 
 double Personagem::getEsquiva() const {
